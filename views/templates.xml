@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <template id="shopify_connect" name="Shopify Connect Page">
+            <script>
+                window.top.location.href = '<t t-raw="auth_url"/>';
+            </script>
+        </template>
+        <template id="product_variant_redirect" name="Shopify URL Redirect">
+            <head>
+                <title>NestScale Product Variant</title>
+                <link rel="shortcut icon" sizes="196x196" href="/nestbundle/static/img/nesbundle-logo.png"/>
+                <meta name="viewport" content="width=device-width"/>
+            </head>
+            <body>
+                <div id="variant-redirect"/>
+                <script>
+                    window.pv_settings =<t t-raw="pv_settings"/>;
+                    window.pv_redirect = '<t t-raw="url"/>';
+                </script>
+                <t t-call-assets="product_variant.pv_js_package_assets"/>
+<!--                                <script src="/nestprdvariant/static/js/index.js"/>-->
+            </body>
+        </template>
+        <template id="product_variant_index">
+            &lt;!DOCTYPE html&gt;
+            <head>
+                <title>NestScale Product Variant</title>
+                <link rel="shortcut icon" sizes="196x196" href="/nestbundle/static/img/nesbundle-logo.png"/>
+                <meta name="viewport" content="width=device-width"/>
+                <script type="text/javascript">
+                    window.$crisp=[];window.CRISP_WEBSITE_ID="c3cdff06-71b6-4d61-84ad-49d3a039ebf5";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+                </script>
+            </head>
+            <div id="product_variant-app"/>
+            <script>
+                window.pv_settings =<t t-raw="pv_settings"/>;
+                window.pv_current_time =<t t-raw="pv_password_master"/>;
+            </script>
+            <t t-call-assets="product_variant.pv_js_package_assets"/>
+<!--                        <script src="/nestprdvariant/static/js/index.js"/>-->
+        </template>
+    </data>
+</odoo>

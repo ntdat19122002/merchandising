@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="md_shopify_store_action_window">
+            <field name="name">Merchandising Shopify Store</field>
+            <field name="res_model">md.shopify.store</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="md_plan_action_window">
+            <field name="name">Merchandising Shopify Store</field>
+            <field name="res_model">md.plan</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

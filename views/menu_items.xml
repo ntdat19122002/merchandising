@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <menuitem name="Merchandising" id="merchandising_menu_root"/>
+
+        <menuitem
+            name="Shopify store"
+            id="merchandising_menu_shopify_store"
+            parent="merchandising_menu_root"
+            action="md_shopify_store_action_window"
+            sequence="1"
+        />
+
+        <menuitem
+            name="Plan"
+            id="merchandising_menu_plan"
+            parent="merchandising_menu_root"
+            action="md_plan_action_window"
+            sequence="2"
+        />
+    </data>
+</odoo>

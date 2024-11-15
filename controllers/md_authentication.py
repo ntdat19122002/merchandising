@@ -130,23 +130,11 @@ class MerchandisingAuthentication(http.Controller):
     @http.route("/shopify/merchandising/main", auth="public")
     def nest_merchandising_main(self, **kw):
         try:
-            verify_request()
+            # verify_request()
             store = request.env["md.shopify.store"].sudo().search([("store_url", "=", request.params["shop"])], limit=1)
             api_key = request.env["ir.config_parameter"].sudo().get_param("merchandising.md_api_key")
             password_master = request.env['ir.config_parameter'].sudo().get_param('merchandising.md_password_master')
             if store:
-                if store.first_install:
-                    md_fetch_install_app(**kw)
-                    store.first_install = False
-
-                if store.current_app_installation is False or store.current_app_installation == '':
-                    createDesignCollection(store)
-                    exist_options = request.env['md.options.setting'].sudo().search([('store_id', '=', store.id)])
-                    app_meta_data_list_option = []
-                    for exist_option in exist_options:
-                        app_meta_data_list_option.append(exist_option.get_options_setting_collection())
-                    store.updateAppDataMetafield(json.dumps(app_meta_data_list_option))
-
                 headers = {"Content-Security-Policy": "frame-ancestors https://" + request.params[
                     "shop"] + " https://admin.shopify.com;"}
 
@@ -156,9 +144,8 @@ class MerchandisingAuthentication(http.Controller):
                     'store_id': store.id,
                     "k": api_key,  # Shopify API Key dùng để tạo App Bridge
                     "current_plan": store.get_current_plan(),
-
                 }
-                return request.render("nestprdvariant.merchandising_index", {
+                return request.render("merchandising.merchandising_index", {
                     "md_settings": json.dumps(value),
                     'md_password_master': json.dumps(password_master)
                 }, headers=headers)

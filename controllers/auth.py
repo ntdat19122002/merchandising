@@ -25,6 +25,7 @@ def verify_request():
             return True
         raise Exception("Unauthorized request")
     except Exception as e:
+
         _logger.error(traceback.format_exc())
     raise Exception("Unauthorized request")
 

@@ -1,0 +1,1971 @@
+@font-face {
+    font-family: "Be Vietnam Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("https://apps.nestscale.com/omnichat/static/font/BeVietnamPro-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Be Vietnam Pro";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("https://apps.nestscale.com/omnichat/static/font/BeVietnamPro-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Be Vietnam Pro";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("https://apps.nestscale.com/omnichat/static/font/BeVietnamPro-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Be Vietnam Pro";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("https://apps.nestscale.com/omnichat/static/font/BeVietnamPro-Bold.ttf") format("truetype");
+}
+
+body {
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    overflow-x: hidden;
+}
+
+#product_variant-app {
+    height: 100%;
+}
+
+.pv-body {
+    height: 100%;
+    max-height: 100%;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+}
+
+.pv-body .ant-layout-header {
+    height: 60px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.pv-body .ant-picker.ant-picker-range {
+    padding: 10px 14px;
+}
+
+.pv-body .ant-layout-sider {
+    max-width: 288px !important;
+    min-width: 288px !important;
+    background-color: white;
+}
+
+.pv-body .ant-layout-sider-collapsed {
+    flex: 0 0 96px !important;
+    max-width: 96px !important;
+    min-width: 96px !important;
+    width: 96px !important;
+}
+
+.pv-body .ant-layout-sider-children {
+    position: relative;
+}
+
+.pv-body .ant-select-lg {
+    font-size: 14px !important;
+}
+
+.pv-navbar {
+    width: 100%;
+}
+
+.pv-center-align {
+    display: flex;
+    align-items: center;
+}
+
+.pv-right-justify {
+    display: flex;
+    justify-content: end;
+}
+
+.pv-btn-primary {
+    cursor: pointer;
+    display: flex;
+    padding: 5px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    background: #171717;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02);
+}
+
+.pv-body .ant-menu-vertical .ant-menu-item::after, .pv-body .ant-menu-vertical-left .ant-menu-item::after, .pv-body .ant-menu-vertical-right .ant-menu-item::after, .pv-body .ant-menu-inline .ant-menu-item::after {
+    border-right: none !important;
+}
+
+/*.pv-body .ant-switch-checked {*/
+/*    background-color: #3AD36E;*/
+/*}*/
+.ant-switch {
+    width: 45px !important;
+    height: 22px !important;
+}
+
+.pv-body .ant-picker, .pv-body .ant-select {
+    border-radius: 7px;
+}
+
+.pv-main-menu {
+    gap: 8px;
+}
+
+.pv-main-menu .ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow {
+    color: #000000;
+}
+
+.pv-main-menu .ant-menu-submenu-selected {
+    color: #000000;
+}
+
+.pv-main-menu.ant-menu.ant-menu-inline-collapsed > .ant-menu-item, .pv-main-menu.ant-menu.ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
+    padding: 0 24px;
+    height: 48px;
+}
+
+.pv-main-menu.ant-menu-inline > .ant-menu-item, .pv-main-menu.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+    height: 48px;
+    line-height: 48px;
+}
+
+.pv-main-menu .ant-menu-item, .pv-main-menu .ant-menu-submenu-title {
+    margin-top: 0 !important;
+}
+
+
+.pv-main-menu.ant-menu-light .ant-menu-item:hover, .pv-main-menu.ant-menu-light .ant-menu-item-active, .pv-main-menu.ant-menu-light .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .pv-main-menu.ant-menu-light .ant-menu-submenu-active, .ant-menu-light .ant-menu-submenu-title:hover {
+    color: black !important;
+}
+
+.pv-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 8px;
+    background: white;
+    padding: 12px;
+    height: 48px;
+}
+
+.ant-menu-inline-collapsed-tooltip .ant-tooltip-content {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.ant-menu-inline-collapsed-tooltip .pv-menu-item {
+    display: none;
+}
+
+.pv-main-menu.ant-menu > .ant-menu-item, .pv-main-menu.ant-menu > .ant-menu-submenu > .ant-menu-submenu-title {
+    padding: 0 24px;
+    height: 48px;
+    background: white !important;
+}
+
+.pv-product-select .ant-modal-body {
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.pv-create-product-group .ant-modal-body {
+    max-height: 100% !important;
+}
+
+.pv-main-menu .ant-menu-light .ant-menu-item:hover {
+    color: #0a0a0a;
+}
+
+.pv-main-menu .ant-menu-sub.ant-menu-inline {
+    background-color: #FFF;
+}
+
+.pv-main-menu .ant-menu-sub .ant-menu-item-only-child {
+    width: 99% !important;
+    background-color: #FFF !important;
+}
+
+.pv-main-menu .ant-menu-item, .pv-main-menu .ant-menu-submenu-title {
+    margin-top: 0 !important;
+}
+
+
+.pv-main-menu.ant-menu-light .ant-menu-item:hover, .pv-main-menu.ant-menu-light .ant-menu-item-active, .pv-main-menu.ant-menu-light .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .pv-main-menu.ant-menu-light .ant-menu-submenu-active, .ant-menu-light .ant-menu-submenu-title:hover {
+    color: #000000;
+}
+
+.pv-main-menu > .ant-menu-item, .pv-main-menu > .ant-menu-submenu > .ant-menu-submenu-title {
+    height: 48px;
+    line-height: 48px;
+}
+
+.ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item, .ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title, .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-submenu-title, .ant-menu-inline .ant-menu-submenu-title {
+
+}
+
+.pv-content {
+    height: calc(100vh);
+    position: relative;
+    overflow-y: auto;
+}
+
+.pv-menu-item.selected {
+    background-color: #F4F4F4;
+    color: black;
+    border-radius: 8px;
+}
+
+.pv-sub-menu-item {
+    padding-left: 48px;
+    color: #666666;
+}
+
+.pv-sub-menu-item.selected {
+    font-weight: 700;
+
+    border-radius: 8px;
+
+    background: #F0F0F0;
+}
+
+.pv-header {
+    border-left: 1px solid #F4F4F4;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    color: black;
+}
+
+.ant-tooltip-inner .unselected {
+    background: unset !important;
+}
+
+.ant-tooltip-inner .unselected svg {
+    color: #F4F4F4;
+}
+
+.pv-content-design {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 40px 26px 32px;
+}
+
+.pv-content {
+    height: calc(100vh);
+    position: relative;
+    overflow-y: auto;
+}
+
+.pv-logo {
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 24px;
+    position: relative;
+}
+
+.pv-main-menu .ant-menu-item:active, .na-content-wrapper .ant-menu-submenu-title:active {
+    background: white;
+    color: #939393;
+}
+
+.pv-main-menu .ant-menu-light .ant-menu-item:hover {
+    color: #0a0a0a;
+}
+
+.pv-main-menu .ant-menu-sub.ant-menu-inline {
+    background-color: white;
+}
+
+.pv-main-menu .ant-menu-sub .ant-menu-item-only-child {
+    width: 99% !important;
+    background-color: white !important;
+}
+
+.pv-main-menu .ant-menu-sub {
+    position: relative;
+}
+
+
+.pv-main-menu .nads_last_menu .ant-menu-sub::before {
+    height: 120px;
+}
+
+
+.ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+    border-right: unset !important;
+}
+
+.pv-main-menu.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected .nads_sub_menu {
+    padding-left: 20px;
+    background-color: #EFEFEF;
+    border-radius: 12px;
+}
+
+.pv-main-menu .ant-menu-sub.ant-menu-inline > .ant-menu-item {
+    height: 48px;
+    line-height: 48px;
+    /*padding-left: 35px !important;*/
+}
+
+.ant-menu.ant-menu-sub li {
+    padding: 0 10px 0 0 !important;
+}
+
+.pv-menu-item-padding {
+    padding-left: 16px !important;
+    margin: 0px !important;
+}
+
+.pv-header-management {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.ant-menu-submenu-title {
+    padding: 0px !important;
+}
+
+.ant-menu-title-content {
+    width: 100%;
+}
+
+.pv-main-menu.ant-menu {
+    font-weight: 500;
+    font-size: 16px;
+    color: #939393;
+}
+
+.pv-main-menu .ant-menu-item-selected {
+    color: unset !important;
+}
+
+.pv-page-title {
+    color: #1C1C1E;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.pv-input {
+    margin-bottom: 14px;
+    border-right: 0;
+    height: 44px;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.pv-input-search-option {
+    margin-bottom: 14px;
+    border-right: 0;
+    height: 44px;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.pv-input-search-option.ant-input-affix-wrapper {
+
+    border-radius: 8px !important;
+}
+
+pv-input .ant-input-affix-wrapper {
+    border-right: 0;
+}
+
+.ant-input-group-addon .ant-select-open .ant-select-selector, .ant-input-group-addon .ant-select-focused .ant-select-selector {
+    color: black !important;
+}
+
+.pv-input .ant-input-group-addon {
+    background: white;
+}
+
+.pv-input .ant-select-dropdown {
+    min-width: 160px;
+}
+
+.pv-search-variant-option {
+    color: #48484A;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    width: 160px;
+}
+
+.pv-block-option {
+    min-height: 394px !important;
+}
+
+.pv-block-paid-plan-option {
+    min-height: 338px !important;
+}
+
+.pv-select-variant-option {
+    padding: 12px 14px;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    height: 40px !important;
+    background: white;
+}
+
+.pv-select-variant-option .ant-select-selector {
+    height: 100% !important;
+}
+
+.pv-input .ant-select-selection-item {
+    text-align: right;
+}
+
+.pv-input .ant-input-affix-wrapper {
+    height: 100%;
+    border: unset !important;
+}
+
+.pv-loading-tag-product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.pv-input .ant-input-group-addon {
+    border: unset !important;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-radius: 8px !important;
+}
+
+.pv-body .ant-picker,
+.pv-body .ant-select {
+    border-radius: 8px !important;
+}
+
+.pv-input .ant-input-group {
+    border: #D1D1D1 1px solid !important;
+    border-radius: 6px !important;
+    height: 100%;
+}
+
+.pv-input .ant-input-prefix {
+    margin-right: 8px !important;
+}
+
+.pv-input .ant-input-group:hover {
+    box-shadow: 0 0 0 2px #C6E3FF !important;
+    transition: 0.3s ease-in-out;
+}
+
+.ant-input-prefix svg {
+    height: 20px !important;
+    width: 20px !important;
+}
+
+.pv-input .ant-input-group:focus-within {
+    border: #3199FF 1px solid !important;
+    box-shadow: 0 0 0 2px #C6E3FF !important;
+}
+
+.ant-input-affix-wrapper:focus, .ant-input-affix-wrapper-focused {
+    box-shadow: unset !important;
+}
+
+.pv-input .ant-input-affix-wrapper {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.pv-input .ant-input-group-addon {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+
+.wrap-input-color {
+    overflow: hidden;
+    height: 24px;
+    max-width: 24px;
+    min-width: 24px;
+    border-radius: 6px;
+    border: 1px solid #E0E0E0;
+    margin-right: 6px;
+}
+
+.pv-input-color {
+    height: 60px !important;
+    width: 60px;
+    margin-top: -7px;
+    margin-left: -7px;
+    padding: 0 !important;
+}
+
+.pv-input-large {
+    height: 44px;
+    width: 85% !important;
+    padding: 12px;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    border: 1px solid #D1D1D1;
+}
+
+.pv-input-bundle-name:focus-visible {
+    outline: none !important;
+}
+
+.pv-input-mini {
+    gap: 10px;
+    padding: 10px 12px;
+    height: 40px;
+    background: #FFFFFF;
+    border: none;
+    border-radius: 6px !important;
+    font-weight: 400;
+    color: #3A3A3C;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 12px;
+    font-style: normal;
+    width: 100%;
+    line-height: 18px;
+}
+
+.btn-upload-file-swatch {
+    display: flex;
+    height: 40px;
+    padding: 8px 12px;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    align-self: stretch;
+    color: #3A3A3C;
+    text-align: center;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    border-radius: 6px;
+    border: 1px solid #D1D1D1;
+    background: white;
+}
+
+.pv-count-affect-title {
+    color: #636366;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.pv-custom-design-setting {
+    color: #333;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 5px 12px;
+    border-radius: 6px;
+    border: 1px solid #D9D9D9;
+    background: #FFF;
+
+
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02);
+}
+
+.pv-count-affect-count {
+    color: #1890FF;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    cursor: pointer;
+}
+
+.pv-value-of-variant-option {
+    color: #1C1C1E;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.pv-option-label {
+    color: #1A1A1A;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.ant-select-dropdown {
+    border-radius: 6px !important;
+}
+
+.pv-option .ant-select-selection-item {
+    height: 100% !important;
+    align-items: center !important;
+    display: flex !important;
+}
+
+.pv-btn-upload-swatch {
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+    width: max-content;
+}
+
+.pv-modal .ant-modal-content {
+    border-radius: 8px;
+}
+
+.pv-modal .ant-modal-header {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.pv-btn-cancel {
+    display: flex !important;
+    height: 36px !important;
+    padding: 8px 20px !important;
+    align-items: center !important;
+    gap: 20px !important;
+    border-radius: 6px !important;
+    width: max-content !important;
+    border: 1px solid #1C1C1E !important;
+}
+
+.pv-design-item-component {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pv-design-item-component-flex-align-center-gap-20 {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.swatch-in-box-item-unselected {
+    width: 88px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 6px;
+    height: 100px;
+    border: 1px solid #DEDEDE;
+}
+
+.pv-display-flex-1-gap-16 {
+    display: flex;
+    flex: 1;
+    gap: 24px;
+}
+
+.pv-design-item-component-in-use {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0px 8px;
+    border-radius: 4px;
+
+}
+
+.pv-btn-submit {
+    border-radius: 6px !important;
+    background: #1D1E21 !important;
+    width: max-content !important;
+    display: flex !important;
+    height: 36px !important;
+    padding: 8px 20px !important;
+    border: none !important;
+    align-items: center !important;
+    gap: 20px !important;
+}
+
+.pv-upgrade-button {
+    background: #1D1E21 !important;
+}
+
+.pv-back-button {
+    background: transparent !important;
+}
+
+.pv-button-plan {
+    border-radius: 8px !important;
+    width: max-content !important;
+    display: flex !important;
+    height: 40px !important;
+    padding: 8px 20px !important;
+    border: none !important;
+    align-items: center !important;
+    gap: 20px !important;
+    background: transparent;
+}
+
+.pv-modal .ant-btn:hover, .ant-btn:focus {
+    color: unset;
+}
+
+.pv-modal .ant-modal-footer {
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.pv-option-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pv-option-title .ant-radio-wrapper {
+    margin-right: unset !important;
+}
+
+.pv-delete-img svg {
+    height: 15px;
+    width: 15px;
+}
+
+.pv-img-name {
+    width: 65%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.pv-delete-img {
+    height: 100%;
+    width: 20px;
+    position: absolute;
+    display: flex !important;
+    align-items: center !important;
+    right: 0;
+
+}
+
+.pv-preview {
+    position: sticky;
+    align-self: flex-start;
+}
+
+.pv-upload-block {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.pv-option-upload-block {
+    flex: 1;
+}
+
+.pv-upload-block img {
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+}
+
+.option-title {
+    color: #3A3A3C;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.flex-column-gap8 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pv-input-error {
+    border: 1px solid red !important;
+}
+
+.option-block {
+    display: flex;
+    border: 1px solid #D1D1D1;
+    width: 100%;
+    border-radius: 6px;
+    background: white;
+    padding: 8px;
+    height: 40px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.pv-block {
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    min-height: 355px;
+}
+
+.pv-variant-option-style {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 14px;
+    grid-auto-rows: 1fr;
+}
+
+.pv-affect-popup {
+    position: absolute;
+    z-index: 1000;
+    background: white;
+    box-shadow: 4px 4px 30px 0 rgba(0, 0, 0, 0.07);
+    top: 45px;
+    right: 20px;
+    padding: 4px 0;
+    border-radius: 8px;
+}
+
+.pv-affect-popup-item {
+    display: flex;
+    height: 50px;
+    width: 266px;
+    padding: 8px 12px;
+    align-items: center;
+    gap: 12px;
+}
+
+.pv-affect-popup-item img {
+    width: 34px;
+    height: 34px;
+    object-fit: cover;
+}
+
+.pv-flex-column-24 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.pv-flex-column {
+    display: flex !important;
+    flex-direction: column;
+
+}
+
+#pv-search-result {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: white;
+    box-shadow: 4px 4px 30px 0 rgba(0, 0, 0, 0.07);
+    width: 100%;
+    height: max-content;
+    z-index: 10;
+    position: absolute;
+    top: 48px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 3px;
+    border: #D1D1D1 1px solid;
+}
+
+.pv-search-result-item {
+    display: flex;
+    padding: 4px 7px;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+    background: white;
+    cursor: pointer;
+}
+
+.pv-search-result-item:hover {
+    background: #E9F6FF;
+}
+
+.pv-design-setting-swatch-square, .pv-design-setting-swatch-in-dropdown-block, .pv-design-setting-circular-swatch-block, .pv-design-setting-square_swatch-block div, .pv-design-setting-swatch-in-pill-block {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.pv-design-setting-swatch-square img {
+    width: 64px;
+    height: 64px;
+}
+
+.swatch-in-box-item {
+    max-width: 88px;
+    min-width: 88px;
+}
+
+.pv-menu-trigger {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0 4px 2px;
+    background: #F4F4F4;
+    border-radius: 10px 0 0 10px;
+
+    right: 0;
+    cursor: pointer;
+}
+
+.pv-design-setting-item {
+    border-radius: 8px;
+    background: white;
+    padding: 20px;
+    gap: 16px;
+}
+
+.pv-design-setting-swatch-in-dropdown-block {
+    display: flex;
+    align-items: center;
+}
+
+.pv-design-setting-swatch-in-dropdown-block .ant-select-selector {
+    align-items: center;
+    height: 52px !important;
+    font-size: 14px;
+    font-style: normal;
+    padding-right: 25px !important;
+    font-weight: 400;
+    padding-left: 10px !important;
+    line-height: 20px;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    color: #3A3A3C;
+}
+
+.pv-design-setting-item .ant-select-selection-item {
+    display: flex;
+}
+
+.pv-design-setting-item img {
+    object-fit: cover;
+}
+
+.pv-select-swatch-in-box-item {
+    border-radius: 5px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.pv-select-drop-down {
+    border-radius: 5px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.pv-select-drop-down img {
+    object-fit: cover;
+    width: 100%;
+    border-radius: unset !important;
+    position: absolute;
+    min-width: unset !important;
+    min-height: unset !important
+}
+
+.pv-select-swatch-in-box-item img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 5px;
+    min-width: 36px;
+    min-height: 36px;
+}
+
+.pv-design-setting-circular-swatch-block {
+    display: flex;
+    gap: 16px;
+}
+
+.pv-design-setting-square_swatch-block img {
+    padding: 3px;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+    background: #FDFDFD;
+    border-radius: unset;
+}
+
+.swatch-in-pill-item {
+    display: flex;
+    padding: 8px 12px 8px 8px;
+    align-items: center;
+    background: #FDFDFD;
+    border: 1px solid #DEDEDE;
+    gap: 12px;
+    border-radius: 100px;
+}
+
+.pv-design-setting-swatch-in-pill-block {
+    display: flex;
+    gap: 16px;
+}
+
+.pv-btn-secondary {
+    cursor: pointer;
+    padding: 5px 12px;
+    gap: 8px;
+    border-radius: 6px;
+    background: #FFF1F0;
+
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02);
+}
+
+.pv-back-to-previous-page {
+    color: #868B90;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.pv-design-item-name {
+    color: #1C1C1E;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.pv-product-select .ant-radio-group {
+    width: 100%;
+}
+
+.pv-design-item-title {
+    color: #1C1C1E;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.pv-design-item-block {
+    border-radius: 8px;
+    background: #FDFDFD;
+    padding: 20px;
+    gap: 24px;
+}
+
+.pv-design-item-input-number {
+    display: flex !important;
+    width: 100% !important;
+    height: 40px;
+    padding: 0 12px 0 16px;
+    justify-content: space-between;
+    align-items: center !important;
+    border-radius: 6px !important;
+    border: 1px solid #D1D1D1;
+}
+
+.pv-design-item-input-number .ant-input-number-handler-wrap {
+    border-bottom-right-radius: 6px !important;
+    border-top-right-radius: 6px !important;
+}
+
+.pv-select-variant-option .ant-select-selector {
+    display: flex;
+    align-items: center;
+}
+
+.pv-design-item-radio-group {
+    display: flex;
+    gap: 4px;
+}
+
+.pv-style-settings {
+    width: 100% !important;
+}
+
+.pv-style-settings .ant-input-number-input-wrap {
+    width: 100%;
+}
+
+.pv-design-item-value-name {
+    color: #636366;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.pv-preview-design-setting .ant-select-selection-item {
+    display: flex;
+    align-items: center;
+}
+
+.pv-preview-title {
+    color: #1C1C1E;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    padding-bottom: 16px;
+}
+
+.pv-preview-name {
+    color: #3A3A3C;
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    padding-bottom: 12px;
+}
+
+#pv-search {
+    position: relative;
+    padding-bottom: 6px;
+}
+
+#pv-search .ant-input {
+    height: 40px;
+}
+
+.pv-preview-design-setting .ant-select-selector {
+    border: none !important;
+    box-shadow: unset !important;
+    height: 100% !important;
+    padding: 0 !important;
+}
+
+.pv-design-setting-swatch-circle-in-square-block img {
+    position: absolute;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    border: unset;
+    background: unset;
+}
+
+.pv-design-setting-swatch-circle-in-square-img-block {
+    height: 100%;
+
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    align-items: center;
+    border-radius: 50% !important;
+}
+
+.pv-design-setting-swatch-in-pill-item {
+    display: flex;
+    border: 1px solid black;
+    align-items: center;
+    cursor: pointer;
+}
+
+.pv-design-setting-swatch-in-pill-img-block {
+    display: flex;
+    align-items: center;
+}
+
+.pv-design-setting-swatch-in-box-block img {
+    position: absolute;
+    width: unset;
+    padding: 0;
+}
+
+.pv-circular-swatch-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.pv-design-setting-square_swatch-item {
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.pv-circular-swatch-item-block-img {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pv-design-setting-swatch-in-box-block .pv-flex-column {
+    text-align: center;
+    align-items: center;
+    flex-wrap: unset;
+    gap: 0;
+    position: relative;
+}
+
+.pv-swatch-in-box-item {
+    cursor: pointer;
+}
+
+.pv-make-sure {
+    color: #1A1A1A;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+}
+
+.pv-make-sure-line {
+    color: #333;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 157.143% */
+}
+
+.pv-100-products {
+    font-family: "Be Vietnam Pro", sans-serif !important;
+    color: #939393;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    margin-top: -10px;
+    gap: 4px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pv-loading-blur {
+    text-align: center;
+    top: 0;
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255 255 255 / 54%);
+}
+
+.pv-design-setting-swatch-in-box-item {
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.pv-design-setting-swatch-circle-in-square-item {
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.pv-design-setting-swatch-in-box-item img {
+    width: 100%;
+    height: unset;
+    border: unset;
+}
+
+.pv-design-setting-circular-swatch-img-delete {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.pv-square-in-dropdown-block-img {
+    position: relative;
+    overflow: hidden;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.pv-design-setting-circular-swatch-img {
+    height: 100%;
+    width: 100%;
+}
+
+.pv-square-in-dropdown-img {
+    height: unset !important;
+    width: 100%;
+    border-radius: unset !important;
+    position: absolute;
+}
+
+.pv-design-setting-square_swatch-img-block {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.pv-design-setting-square_swatch-img-block img {
+    position: absolute;
+    padding: 0 !important;
+    width: 100% !important;
+    height: unset;
+    border: unset;
+}
+
+.pv-design-setting-back-to-previous-page {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding-bottom: 8px;
+    width: max-content;
+}
+
+.pv-flex-row-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pv-flex-row {
+    display: flex !important;
+    flex-direction: row;
+}
+
+.pv-justify-center {
+    justify-content: center;
+}
+
+.pv-no-data {
+
+    width: 100%;
+    background: white;
+    padding: 32px 0;
+    border-radius: 8px;
+    box-shadow: 4px 4px 30px 0 rgba(0, 0, 0, 0.07);
+    z-index: 10;
+    position: absolute;
+    top: 54px;
+    overflow: hidden;
+}
+
+.pv-button-style {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 157.143% */
+}
+
+.pv-notification-success-class {
+    border-radius: 10px;
+    background: #52C41A;
+
+    /* Dropdown */
+    box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.08);
+    color: #FFF;
+}
+
+body .ant-notification-notice {
+    border-radius: 10px !important;
+}
+
+body .ant-notification-notice-message {
+    color: #FFF;
+}
+
+body .anticon.ant-notification-notice-icon-success {
+    color: #FFF;
+}
+
+body .anticon.ant-notification-notice-icon-error {
+    color: #FFF;
+}
+
+body .anticon.ant-notification-notice-icon-warning {
+    color: #FFF;
+}
+
+body .ant-notification-notice-close {
+    color: #FFF;
+}
+
+.pv-grid-2-column {
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 24px;
+}
+
+body .ant-tooltip-inner span {
+    color: #333333;
+}
+
+.pv-collapsed-tip-tool {
+    color: #FFFFFF !important;
+}
+
+body .ant-tooltip.ant-tooltip-placement-bottom .ant-tooltip-inner {
+    border-radius: 4px !important;
+}
+
+/*body .ant-tooltip {*/
+/*    max-width: 100%;*/
+/*}*/
+
+
+.pv-showmore-button {
+    display: flex !important;
+    padding: 9px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    cursor: pointer !important;
+    border-radius: 6px !important;
+    border: 1px solid #D9D9D9 !important;
+    background: #FFF !important;
+
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02) !important;
+}
+
+.pv-preview-main-container {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
+    max-width: 400px;
+
+}
+
+.pv-variant-image-container {
+    max-width: 400px;
+    max-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.pv-variant-image-selected {
+    max-width: 100%;
+}
+
+.pv-preview-money {
+    color: #1A1A1A;
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 140% */
+}
+
+.pv-plus-variant-hidden {
+    color: #1A1A1A;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pv-card-product {
+    position: relative;
+    z-index: 99999999 !important;
+}
+
+.pv-card-product span.ant-radio + * {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.pv-sticky-menu {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 6px 0px rgba(163, 163, 163, 0.30);
+    padding: 16px 40px;
+    transition: padding, background 0.25s ease-in-out;
+}
+
+.pv-not-sticky-menu {
+    position: relative;
+    top: 0;
+    background: #F4F4F4;
+    padding: 32px 40px 0px 40px;
+    transition: padding, background 0.25s ease-in-out;
+}
+
+.ant-dropdown {
+    z-index: 9999 !important;
+}
+
+.pv-rainbow-image {
+    height: 48px;
+    width: 48px;
+}
+
+.pv-rainbow-container {
+    padding: 7px;
+    position: relative
+}
+
+.pv-modal-title {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 140% */
+}
+
+.pv-select-image-option .ant-select-item-option-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#pv-image-size-fit .ant-select-selection-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pv-swatch_circle_in_square img {
+    position: absolute;
+}
+
+.pv-swatch_circle_in_square div {
+    position: relative;
+    overflow: hidden;
+}
+
+.pv-img {
+    position: absolute;
+    height: unset;
+    width: 100%;
+    object-fit: cover;
+}
+
+.pv-display-button {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    gap: 8px;
+    align-items: center;
+    width: 15%;
+    padding: 8px 16px;
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid #D9D9D9;
+    background: #FFF;
+    /* Drop Shadow Button */
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02);
+}
+
+.pv-product-select-wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.pv-product-select-list {
+    width: 100%;
+    height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.pv-product-info > .ant-skeleton-element .ant-skeleton-input {
+    height: 44px;
+    border-radius: 4px;
+}
+
+.pv-product-info-title .ant-skeleton-element .ant-skeleton-input-sm,
+.pv-loading-tag-product-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 8px 16px 10px;
+    justify-content: flex-end;
+    cursor: not-allowed;
+}
+
+.pv-no-product {
+    height: 212px;
+    width: 100%;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.pv-product-info-img {
+    border-radius: 4px;
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+}
+
+.pv-product-option.disabled .pv-product-info-img {
+    opacity: 0.4;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.pv-product-option {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    cursor: pointer;
+    gap: 16px;
+    border-radius: 8px;
+}
+
+.pv-product-option.selected {
+    background: #E9F6FF;
+}
+
+.pv-product-option.disabled {
+    background: #F4F4F4;
+}
+
+.pv-product-option:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+.pv-product-info {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.pv-product-info .ant-select-selection-item {
+    line-height: 35px !important;
+}
+
+.pv-product-info-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #1677FF;
+    margin-bottom: 6px;
+    max-width: 550px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.pv-input-search-product {
+    border-radius: 8px !important;
+}
+
+.pv-modal-product-group {
+    color: #1A1A1A;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 4px;
+}
+
+.pv-modal-upgrade-plan {
+    color: #1A1A1A;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.pv-product-group-modal .ant-modal-body {
+    overflow-y: hidden !important;
+}
+
+.pv-confirm-modal-delete-button {
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+}
+
+.pv-delete-confirm .ant-modal-footer {
+    border-top: none;
+}
+
+.pb-btn-disable {
+    cursor: pointer;
+    display: flex;
+    padding: 5px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    border: 1px solid #D9D9D9;
+    background: #F5F5F5;
+}
+
+.pv-link {
+    cursor: pointer;
+    color: #1677FF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    text-decoration-line: underline !important;
+}
+
+.pv-price-text {
+    color: #666666;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
+
+}
+
+.pv-limited-swatch .ant-radio-wrapper > span:not([class]) {
+    min-width: 81px;
+    font-size: 13px;
+}
+
+.pv-upload-image-limited-swatch {
+    border-radius: 8px;
+    border: 1px solid #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.pv-label-limited-swatch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.pv-label-limited-swatch img {
+    width: 30px;
+}
+
+.pv-paid-plan-block-style {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+
+}
+
+.pv-plan-price-text {
+    color: #000;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 46px;
+}
+
+.pv-plan-month-text {
+    color: #666;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.pv-block-plan {
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+
+    position: relative;
+    min-height: 355px;
+}
+
+.pv-paid-plan-button {
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.pv-current-plan-button {
+    border: 1px solid #D9D9D9;
+    background: #F5F5F5;
+    color: #BFBFBF;
+    cursor: not-allowed;
+}
+
+.pv-trial-button {
+    cursor: pointer;
+    background: #1677FF;
+    color: #FFF;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02);
+}
+
+.pv-select-button {
+    cursor: pointer;
+    background: #FFF;
+    color: #333;
+    border: 1px solid #D9D9D9;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02);
+}
+
+.pv-back-button {
+    border: 1px solid #D9D9D9 !important;
+    background: transparent !important;
+    padding: 8px 20px !important;
+    border-radius: 6px !important;
+}
+
+.pv-upgrade-modal-container {
+    border-radius: 8px;
+    border: 1px solid #D9D9D9;
+    width: 100%;
+}
+
+.pv-store-name {
+    color: #1A1A1A;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 157.143% */
+}
+
+.pb-plan-name-upgrade {
+    border-radius: 4px;
+    background: #E6F4FF;
+    color: #1677FF;
+}
+
+.pv-half-width {
+    width: 50%;
+}
+
+.pv-downgrade-button {
+    background: #E9A317 !important;
+}
+
+.pv-price-text {
+    color: #1A1A1A;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+}
+
+.pv-overlay-paid {
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+.pv-button-paid {
+    display: flex;
+    padding: 7px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    background: #171717;
+    color: #FFF;
+    /* Drop Shadow Button */
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+}
+
+.pv-small-font {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
+}

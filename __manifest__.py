@@ -16,9 +16,10 @@
         'views/views.xml',
         'views/menu_items.xml',
         'views/setting_views.xml',
+        'views/templates.xml',
     ],
     'assets': {
-        'product_variant.pv_js_package_assets': [
+        'merchandising.pv_js_package_assets': [
             'merchandising/static/js/index.js'
         ]
     }

@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 import shopify
 
 from odoo import models, fields
@@ -37,7 +39,7 @@ class MdShopifyStore(models.Model):
     current_app_installation = fields.Char()
 
     plan_version = fields.Integer(string="Plan Version", default=1)
-    plan_id = fields.Many2one('pv.plan')
+    plan_id = fields.Many2one('md.plan')
     is_test_charge = fields.Boolean(default=False)
     start_trials_date = fields.Datetime()
     billing_on = fields.Char(string='Billing On')
@@ -89,3 +91,29 @@ class MdShopifyStore(models.Model):
         except Exception as e:
             return False
         shopify.ShopifyResource.clear_session()
+
+    def get_current_plan(self):
+        if not self.plan_id:
+            freePlan = self.env['pv.plan'].search([('price', '=', 0), ('plan_version', '=', self.plan_version)],
+                                                  limit=1)
+            self.plan_id = freePlan.id
+        billing_on_start = datetime.now()
+        if not self.billing_on:
+            start = datetime.now()
+            if self.start_trials_date:
+                billing_on_start = self.start_trials_date + timedelta(days=8)
+            billing_on_end = start + timedelta(days=30)
+            next_billing = billing_on_end + timedelta(days=1)
+        else:
+            billing_on_start = datetime.strptime(self.billing_on, '%Y-%m-%d') - timedelta(days=30)
+            billing_on_end = datetime.strptime(self.billing_on, '%Y-%m-%d')
+            next_billing = billing_on_end + timedelta(days=1)
+        return {
+            'id': self.plan_id.id,
+            'name': self.plan_id.name,
+            'price': self.plan_id.price,
+            'is_free_trial': (fields.datetime.now() - self.start_trials_date).days if self.start_trials_date else True,
+            'billing_on_start': billing_on_start.strftime('%Y-%m-%d'),
+            'billing_on_end': billing_on_end.strftime('%Y-%m-%d'),
+            'next_billing': next_billing.strftime('%Y-%m-%d')
+        }

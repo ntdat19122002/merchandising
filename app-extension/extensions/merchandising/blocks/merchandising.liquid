@@ -1,0 +1,16 @@
+<script>
+  console.log(13)
+  fetch('/apps/merchandising/pixel/view')
+</script>
+
+{% schema %}
+{
+  "name": "Star Rating",
+  "target": "body",
+  "settings": [
+    { "type": "product", "id": "product", "label": "product", "autofill": true },
+    { "type": "color", "id": "colour", "label": "Star Colour", "default": "#ff0000" }
+  ]
+}
+{% endschema %}
+

@@ -1,14 +1,9 @@
-node_modules
-
-package-lock.json
-
-bundle.mp4
-*.mp4
-
 # Environment Configuration
 .env
 .env.*
 
+# Dependency directory
+node_modules
 
 # Test coverage directory
 coverage

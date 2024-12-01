@@ -1,0 +1,38 @@
+{% assign avg_rating = block.settings.product.metafields.demo.avg_rating.value | round %}
+<span style="color:{{ block.settings.colour }}">
+  {% render 'stars', rating: avg_rating %}
+</span>
+{% if avg_rating >= 4 %}
+  <br>
+  <img src="{{ "thumbs-up.png" | asset_img_url: '15x' }}" height="15" width="15" loading="lazy">
+  {{ 'ratings.home.recommendationText' | t }}
+{% endif %}
+
+<script>
+  console.log(1113)
+  fetch('https://43cd-42-113-60-43.ngrok-free.app/pixel/view')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('Pixel data:', data);
+  })
+  .catch(error => {
+    console.error('Fetch error:', error);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Star Rating",
+  "target": "section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "product", "autofill": true },
+    { "type": "color", "id": "colour", "label": "Star Colour", "default": "#ff0000" }
+  ]
+}
+{% endschema %}
+

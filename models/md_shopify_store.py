@@ -74,7 +74,7 @@ class MdShopifyStore(models.Model):
             webhook_ids = []
             session = self.init_nest_pv_variant_shopify_session()
             existing_webhooks = shopify.Webhook.find(limit=100)
-            webhook_base_url = self.env["ir.config_parameter"].sudo().get_param("product_variant.pv_webhook_base_url")
+            webhook_base_url = self.env["ir.config_parameter"].sudo().get_param("merchandising.md_webhook_base_url")
             if not len(existing_webhooks) > 0:
                 for t in topics:
                     topic = topics[t]

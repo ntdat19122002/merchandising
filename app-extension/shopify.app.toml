@@ -1,0 +1,25 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "e7bbf0ee7b1da040236a262ef0d9cd5e"
+application_url = "https://odoo.website/shopify/merchandising/auth"
+embedded = true
+name = "merchandising"
+handle = "merchandising-3"
+
+[build]
+dev_store_url = "testsroredat.myshopify.com"
+include_config_on_deploy = true
+
+[webhooks]
+api_version = "2024-10"
+
+[auth]
+redirect_urls = [ "https://odoo.website/shopify/merchandising/finalize" ]
+
+[app_proxy]
+url = "https://43cd-42-113-60-43.ngrok-free.app/"
+subpath = "merchandising"
+prefix = "apps"
+
+[pos]
+embedded = false

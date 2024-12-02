@@ -7,7 +7,7 @@ from .auth import verify_request
 
 _logger = logging.getLogger(__name__)
 
-SCOPES = ["read_products", "read_themes"]
+SCOPES = ["read_products", "read_themes", 'write_pixels', 'read_customer_events']
 
 
 class MerchandisingAuthentication(http.Controller):

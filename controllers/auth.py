@@ -17,7 +17,7 @@ def verify_request():
             query = parse.urlsplit(request.httprequest.url).query
         else:
             query = parse.urlsplit(request.params.get("referer")).query
-        shopify.Session.secret = request.env["ir.config_parameter"].sudo().get_param("product_variant.md_api_secret_key")
+        shopify.Session.secret = request.env["ir.config_parameter"].sudo().get_param("merchandising.md_api_secret_key")
         dict_params = dict(parse_qs(query))
         params = {k: v[0] for k, v in dict_params.items()}
         session_hmac = shopify.Session.calculate_hmac(params)
@@ -31,7 +31,7 @@ def verify_request():
 
 
 def verify_app_proxy_request():
-    secret_key = request.env["ir.config_parameter"].sudo().get_param("product_variant.md_api_secret_key")
+    secret_key = request.env["ir.config_parameter"].sudo().get_param("merchandising.md_api_secret_key")
     query_params = dict(parse.parse_qs(request.httprequest.query_string))
     params = {key.decode("utf-8"): value[0].decode("utf-8") for (key, value) in query_params.items() if key.decode("utf-8") != "signature"}
     if "logged_in_customer_id" not in params:
@@ -52,7 +52,7 @@ def verify_app_proxy_request():
 
 def verify_webhook():
     try:
-        secret_key = request.env['ir.config_parameter'].sudo().get_param('product_variant.md_api_secret_key')
+        secret_key = request.env['ir.config_parameter'].sudo().get_param('merchandising.md_api_secret_key')
         digest = hmac.new(secret_key.encode('utf-8'), request.httprequest.data, hashlib.sha256).digest()
         computed_hmac = base64.b64encode(digest)
         if not hmac.compare_digest(computed_hmac, request.httprequest.headers.get('X-Shopify-Hmac-Sha256').encode('utf-8')):

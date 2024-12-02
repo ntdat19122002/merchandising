@@ -1,0 +1,20 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "2c00dffb9b0ac1f287679395d0d70611"
+application_url = "https://odoo.website/shopify/merchandising/auth"
+embedded = true
+name = "merchandising"
+handle = "merchandising-2"
+
+[build]
+dev_store_url = "store-ns-apps.myshopify.com"
+include_config_on_deploy = true
+
+[webhooks]
+api_version = "2024-10"
+
+[auth]
+redirect_urls = [ "https://odoo.website/shopify/merchandising/finalize" ]
+
+[pos]
+embedded = false

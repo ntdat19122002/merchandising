@@ -9,20 +9,6 @@
 {% endif %}
 
 <script>
-  console.log(1113)
-  fetch('https://43cd-42-113-60-43.ngrok-free.app/pixel/view')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log('Pixel data:', data);
-  })
-  .catch(error => {
-    console.error('Fetch error:', error);
-  });
 </script>
 
 {% schema %}

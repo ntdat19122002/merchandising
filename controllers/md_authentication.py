@@ -4,6 +4,7 @@ from odoo.http import request, Response
 from datetime import datetime
 from urllib.parse import urlencode
 from .auth import verify_request
+from ..utils.utils import get_scope_shopify
 
 _logger = logging.getLogger(__name__)
 

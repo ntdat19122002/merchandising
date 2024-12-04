@@ -7,7 +7,7 @@
         </template>
         <template id="merchandising_redirect" name="Shopify URL Redirect">
             <head>
-                <title>NestScale Product Variant</title>
+                <title>Merchandising</title>
                 <link rel="shortcut icon" sizes="196x196" href="/nestbundle/static/img/nesbundle-logo.png"/>
                 <meta name="viewport" content="width=device-width"/>
             </head>
@@ -24,12 +24,9 @@
         <template id="merchandising_index">
             &lt;!DOCTYPE html&gt;
             <head>
-                <title>NestScale Product Variant</title>
+                <title>Merchandising</title>
                 <link rel="shortcut icon" sizes="196x196" href="/nestbundle/static/img/nesbundle-logo.png"/>
                 <meta name="viewport" content="width=device-width"/>
-                <script type="text/javascript">
-                    window.$crisp=[];window.CRISP_WEBSITE_ID="c3cdff06-71b6-4d61-84ad-49d3a039ebf5";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
-                </script>
             </head>
             <div id="merchandising-app"/>
             <script>

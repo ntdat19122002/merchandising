@@ -2,6 +2,7 @@ import {h, createApp} from 'vue/dist/vue.esm-bundler'
 import App from './App.vue'
 import {Redirect} from '@shopify/app-bridge/actions'
 import 'ant-design-vue/dist/antd.css'
+import '../static/css/main.css'
 import {createApp as createAppBridge} from '@shopify/app-bridge'
 
 

@@ -9,11 +9,11 @@ module.exports = (env) => {
     return {
         mode: mode,
         entry: [
-            './frontend_script.js'
+            './app.js'
         ],
         output: {
             path: path.resolve(__dirname, '../static/js'),
-            filename: 'shopify_frontend.js'
+            filename: 'appReview.js'
         },
         module: {
             rules: [

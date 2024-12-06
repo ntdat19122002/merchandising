@@ -11,6 +11,10 @@
                     <FileOutlined/>
                     <span>Journey</span>
                 </MenuItem>
+                <MenuItem key="Product">
+                    <PieChartOutlined/>
+                    <span>Product</span>
+                </MenuItem>
                 <MenuItem key="Order">
                     <PieChartOutlined/>
                     <span>Order</span>
@@ -32,6 +36,7 @@
                 <div :style="{ padding: '24px', background: '#fff', minHeight: '360px' }">
                     <Customer v-if='menu[0] == "Customer"'/>
                     <Journey v-if="menu[0] == 'Journey'"/>
+                    <Product v-if="menu[0] == 'Product'"/>
                     <Order v-if="menu[0] == 'Order'"/>
                     <Review v-if="menu[0] == 'Review'"/>
                 </div>
@@ -66,11 +71,12 @@ import CustomerAction from "/components/Pixel/CustomerAction.vue"
 import Customer from "./views/Customer/Customer.vue"
 import Order from "/views/OrderManagement/Order.vue"
 import Journey from "/views/Journey/Jouney.vue"
+import Product from "/views/Product/Product.vue"
 import Review from "/views/ReviewManagement/Review.vue"
 
 export default {
     components: {
-        CustomerAction, Customer, Order, Journey, Review,
+        CustomerAction, Customer, Order, Journey, Review,Product,
         Menu, MenuItem, Layout, LayoutSider, LayoutHeader, LayoutContent, LayoutFooter, Breadcrumb, BreadcrumbItem,
         PieChartOutlined,
         DesktopOutlined,

@@ -1,14 +1,11 @@
-{% assign avg_rating = block.settings.product.metafields.demo.avg_rating.value | round %}
-<span style="color:{{ block.settings.colour }}">
-  {% render 'stars', rating: avg_rating %}
-</span>
-{% if avg_rating >= 4 %}
-  <br>
-  <img src="{{ "thumbs-up.png" | asset_img_url: '15x' }}" height="15" width="15" loading="lazy">
-  {{ 'ratings.home.recommendationText' | t }}
-{% endif %}
+<div id="merchandising-review-app"></div>
 
 <script>
+  let script = document.createElement('script')
+  script.type = 'text/javascript'
+  script.id = 'merchandising-star-script'
+  script.src = 'https://odoo.website/merchandising/static/js/appReview.js?v=20241129_1'
+  document.head.appendChild(script)
 </script>
 
 {% schema %}

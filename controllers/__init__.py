@@ -1,2 +1,2 @@
-from . import auth,md_authentication,pixel,judgeme
+from . import auth,md_authentication,pixel,judgeme,review,md_shopify_product
 

@@ -2,15 +2,15 @@ import {register} from "@shopify/web-pixels-extension";
 
 register(({analytics, browser, init, settings}) => {
     analytics_page_viewed(analytics)
-    analytics_checkout_completed(analytics)
-    analytics_cart_viewed(analytics)
-    analytics_product_added_to_cart(analytics)
     analytics_product_viewed(analytics)
+    analytics_product_added_to_cart(analytics)
+    analytics_cart_viewed(analytics)
+    analytics_checkout_started(analytics)
+    analytics_checkout_completed(analytics)
     // analytics_alert_displayed(analytics)
     // analytics_checkout_address_info_submitted(analytics)
     // analytics_checkout_contact_info_submitted(analytics)
     // analytics_checkout_shipping_info_submitted(analytics)
-    // analytics_checkout_started(analytics)
     // analytics_collection_viewed(analytics)
     // analytics_payment_info_submitted(analytics)
     // analytics_product_removed_from_cart(analytics)
@@ -68,6 +68,68 @@ function analytics_product_added_to_cart(analytics) {
         fetch('https://odoo.website/pixel/events/product_added_to_cart');
     });
 }
+function analytics_cart_viewed(analytics) {
+    analytics.subscribe('cart_viewed', (event) => {
+        console.log('Cart viewed12',event);
+        // Example for accessing event data
+
+        const totalCartCost = event.data.cart.cost.totalAmount.amount;
+
+        const firstCartLineItemName =
+            event.data.cart.lines[0]?.merchandise.product.title;
+
+        const payload = {
+            event_name: event.name,
+            event_data: {
+                cartCost: totalCartCost,
+                firstCartItemName: firstCartLineItemName,
+            },
+        };
+
+        // Example for sending event data to third party servers
+        fetch('https://odoo.website/pixel/events/cart_viewed');
+    });
+}
+function analytics_checkout_started(analytics) {
+    analytics.subscribe('checkout_started', (event) => {
+        console.log('Checkout started', event)
+        const checkout = event.data.checkout;
+
+        const checkoutTotalPrice = checkout.totalPrice?.amount;
+
+        const allDiscountCodes = checkout.discountApplications.map((discount) => {
+            if (discount.type === 'DISCOUNT_CODE') {
+                return discount.title;
+            }
+        });
+
+        const firstItem = checkout.lineItems[0];
+
+        const firstItemDiscountedValue = firstItem.discountAllocations[0]?.amount;
+
+        const customItemPayload = {
+            quantity: firstItem.quantity,
+            title: firstItem.title,
+            discount: firstItemDiscountedValue,
+        };
+
+        const payload = {
+            event_name: event.name,
+            event_data: {
+                totalPrice: checkoutTotalPrice,
+                discountCodesUsed: allDiscountCodes,
+                firstItem: customItemPayload,
+            },
+        };
+
+        // Example for sending event data to third party servers
+        fetch('https://example.com/pixel', {
+            method: 'POST',
+            body: JSON.stringify(payload),
+            keepalive: true,
+        });
+    });
+}
 function analytics_checkout_completed(analytics) {
     analytics.subscribe('checkout_completed', (event) => {
         console.log('Checkout completed', event)
@@ -112,28 +174,7 @@ function analytics_checkout_completed(analytics) {
         fetch('https://odoo.website/pixel/events/checkout_completed');
     });
 }
-function analytics_cart_viewed(analytics) {
-    analytics.subscribe('cart_viewed', (event) => {
-        console.log('Cart viewed12',event);
-        // Example for accessing event data
 
-        const totalCartCost = event.data.cart.cost.totalAmount.amount;
-
-        const firstCartLineItemName =
-            event.data.cart.lines[0]?.merchandise.product.title;
-
-        const payload = {
-            event_name: event.name,
-            event_data: {
-                cartCost: totalCartCost,
-                firstCartItemName: firstCartLineItemName,
-            },
-        };
-
-        // Example for sending event data to third party servers
-        fetch('https://odoo.website/pixel/events/cart_viewed');
-    });
-}
 function analytics_ui_extension_errored(analytics) {
     analytics.subscribe('ui_extension_errored', (event) => {
         console.log('Analytics ui extension errored', event)
@@ -262,46 +303,7 @@ function analytics_collection_viewed(analytics) {
         });
     });
 }
-function analytics_checkout_started(analytics) {
-    analytics.subscribe('checkout_started', (event) => {
-        console.log('Checkout started', event)
-        const checkout = event.data.checkout;
 
-        const checkoutTotalPrice = checkout.totalPrice?.amount;
-
-        const allDiscountCodes = checkout.discountApplications.map((discount) => {
-            if (discount.type === 'DISCOUNT_CODE') {
-                return discount.title;
-            }
-        });
-
-        const firstItem = checkout.lineItems[0];
-
-        const firstItemDiscountedValue = firstItem.discountAllocations[0]?.amount;
-
-        const customItemPayload = {
-            quantity: firstItem.quantity,
-            title: firstItem.title,
-            discount: firstItemDiscountedValue,
-        };
-
-        const payload = {
-            event_name: event.name,
-            event_data: {
-                totalPrice: checkoutTotalPrice,
-                discountCodesUsed: allDiscountCodes,
-                firstItem: customItemPayload,
-            },
-        };
-
-        // Example for sending event data to third party servers
-        fetch('https://example.com/pixel', {
-            method: 'POST',
-            body: JSON.stringify(payload),
-            keepalive: true,
-        });
-    });
-}
 function analytics_checkout_shipping_info_submitted(analytics) {
     analytics.subscribe('checkout_shipping_info_submitted', (event) => {
         console.log('Checkout shipping info submitted', event)

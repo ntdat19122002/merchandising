@@ -8,23 +8,69 @@
                 Connect pixel
             </button>
         </div>
+        <div>
+            <Table :dataSource="customerDataSource" :columns="columns"/>
+        </div>
     </div>
 </template>
 
 <script>
 import axios from "axios";
+import {Table} from 'ant-design-vue'
 
 export default {
-    name: "Review.vue",
-    methods:{
-        connectPixel(){
-            axios.post('/pixel/connect',{
-                jsonrpc:2.0,
-                params:{
+    components: {Table},
+    data() {
+        return {
+            customerDataSource:[],
+            columns: [
+                {
+                    title: 'Email',
+                    dataIndex: 'email',
+                    key: 'email',
+                },
+                {
+                    title: 'Phone',
+                    dataIndex: 'phone',
+                    key: 'phone',
+                },
+                {
+                    title: 'Order',
+                    dataIndex: 'order',
+                    key: 'order',
+                },
+                {
+                    title: 'Total spend',
+                    dataIndex: 'spend',
+                    key: 'spend',
+                },
+            ],
+        }
+    },
+    methods: {
+        connectPixel() {
+            axios.post('/pixel/connect', {
+                jsonrpc: 2.0,
+                params: {
                     store_url: window.md_settings.store_url
                 }
             })
         }
+    },
+    mounted() {
+        axios.get('/md/customer',{
+            params:{
+                store_url: window.md_settings.store_url
+            }
+        })
+            .then((res) => {
+                for (let customer of res.data.customer_data){
+                    this.customerDataSource.push({
+                        email: customer.email ? customer.email : 'Unkown',
+                        phone: customer.phone ? customer.phone : 'Unkown'
+                    })
+                }
+            })
     }
 }
 </script>

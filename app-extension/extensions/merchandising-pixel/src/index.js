@@ -1,4 +1,5 @@
 import {register} from "@shopify/web-pixels-extension";
+import axios from "axios";
 
 register(({analytics, browser, init, settings}) => {
     analytics_page_viewed(analytics)
@@ -21,10 +22,17 @@ register(({analytics, browser, init, settings}) => {
 
 function analytics_page_viewed(analytics) {
     analytics.subscribe('page_viewed', (event) => {
-        console.log('Page viewed', event);
-        fetch('https://odoo.website/pixel/events/page_viewed')
+        console.log('Page viewed12', event);
+        axios.get('https://odoo.website/pixel/events/page_viewed', {
+            params: {
+                store_url: event.context.document.location.host,
+                client_id: event.clientId,
+                event: event.name,
+            }
+        })
     });
 }
+
 function analytics_product_viewed(analytics) {
     analytics.subscribe('product_viewed', (event) => {
         console.log('Product viewed', event)
@@ -41,9 +49,16 @@ function analytics_product_viewed(analytics) {
         };
 
         // Example for sending event to third party servers
-        fetch('https://odoo.website/pixel/events/product_viewed');
+        axios.get('https://odoo.website/pixel/events/product_viewed', {
+            params: {
+                store_url: event.context.document.location.host,
+                client_id: event.clientId,
+                event: event.name,
+            }
+        })
     });
 }
+
 function analytics_product_added_to_cart(analytics) {
     analytics.subscribe('product_added_to_cart', (event) => {
         console.log('Added to cart', event)
@@ -65,12 +80,19 @@ function analytics_product_added_to_cart(analytics) {
         };
 
         // Example for sending event to third party servers
-        fetch('https://odoo.website/pixel/events/product_added_to_cart');
+        axios.get('https://odoo.website/pixel/events/product_added_to_cart', {
+            params: {
+                store_url: event.context.document.location.host,
+                client_id: event.clientId,
+                event: event.name,
+            }
+        })
     });
 }
+
 function analytics_cart_viewed(analytics) {
     analytics.subscribe('cart_viewed', (event) => {
-        console.log('Cart viewed12',event);
+        console.log('Cart viewed1', event);
         // Example for accessing event data
 
         const totalCartCost = event.data.cart.cost.totalAmount.amount;
@@ -87,9 +109,16 @@ function analytics_cart_viewed(analytics) {
         };
 
         // Example for sending event data to third party servers
-        fetch('https://odoo.website/pixel/events/cart_viewed');
+        axios.get('https://odoo.website/pixel/events/cart_viewed', {
+            params: {
+                store_url: event.context.document.location.host,
+                client_id: event.clientId,
+                event: event.name,
+            }
+        })
     });
 }
+
 function analytics_checkout_started(analytics) {
     analytics.subscribe('checkout_started', (event) => {
         console.log('Checkout started', event)
@@ -123,13 +152,16 @@ function analytics_checkout_started(analytics) {
         };
 
         // Example for sending event data to third party servers
-        fetch('https://example.com/pixel', {
-            method: 'POST',
-            body: JSON.stringify(payload),
-            keepalive: true,
-        });
+        axios.get('https://odoo.website/pixel/events/checkout_started', {
+            params: {
+                store_url: event.context.document.location.host,
+                client_id: event.clientId,
+                event: event.name,
+            }
+        })
     });
 }
+
 function analytics_checkout_completed(analytics) {
     analytics.subscribe('checkout_completed', (event) => {
         console.log('Checkout completed', event)
@@ -171,7 +203,13 @@ function analytics_checkout_completed(analytics) {
         };
 
         // Example for sending event data to third party servers
-        fetch('https://odoo.website/pixel/events/checkout_completed');
+        axios.get('https://odoo.website/pixel/events/checkout_completed', {
+            params: {
+                store_url: event.context.document.location.host,
+                client_id: event.clientId,
+                event: event.name,
+            }
+        })
     });
 }
 
@@ -199,6 +237,7 @@ function analytics_ui_extension_errored(analytics) {
         });
     });
 }
+
 function analytics_search_submitted(analytics) {
     analytics.subscribe('search_submitted', (event) => {
         console.log('Search submitted', event)
@@ -225,6 +264,7 @@ function analytics_search_submitted(analytics) {
         });
     });
 }
+
 function analytics_product_removed_from_cart(analytics) {
     analytics.subscribe('product_removed_from_cart', (event) => {
         console.log('Product removed from cart', event)
@@ -253,6 +293,7 @@ function analytics_product_removed_from_cart(analytics) {
         });
     });
 }
+
 function analytics_payment_info_submitted(analytics) {
     analytics.subscribe('payment_info_submitted', (event) => {
         console.log('Payment info submitted', event)
@@ -277,6 +318,7 @@ function analytics_payment_info_submitted(analytics) {
 
     });
 }
+
 function analytics_collection_viewed(analytics) {
     analytics.subscribe('collection_viewed', (event) => {
         console.log('Collection viewed', event)
@@ -329,6 +371,7 @@ function analytics_checkout_shipping_info_submitted(analytics) {
         });
     });
 }
+
 function analytics_checkout_contact_info_submitted(analytics) {
     analytics.subscribe('checkout_contact_info_submitted', (event) => {
         console.log('Checkout contact info submitted', event)
@@ -353,6 +396,7 @@ function analytics_checkout_contact_info_submitted(analytics) {
         });
     });
 }
+
 function analytics_checkout_address_info_submitted(analytics) {
     analytics.subscribe('checkout_address_info_submitted', (event) => {
         console.log('Checkout address info submitted', event)
@@ -369,9 +413,10 @@ function analytics_checkout_address_info_submitted(analytics) {
         };
     });
 }
+
 function analytics_alert_displayed(event) {
     analytics.subscribe('alert_displayed', (event) => {
-        console.log('Alert displayed',event);
+        console.log('Alert displayed', event);
         const {target, type, message} = event.data.alert;
 
         const payload = {

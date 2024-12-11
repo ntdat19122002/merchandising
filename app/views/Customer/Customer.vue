@@ -41,8 +41,8 @@ export default {
                 },
                 {
                     title: 'Total spend',
-                    dataIndex: 'spend',
-                    key: 'spend',
+                    dataIndex: 'total_spend',
+                    key: 'total_spend',
                 },
             ],
         }
@@ -67,7 +67,9 @@ export default {
                 for (let customer of res.data.customer_data){
                     this.customerDataSource.push({
                         email: customer.email ? customer.email : 'Unkown',
-                        phone: customer.phone ? customer.phone : 'Unkown'
+                        phone: customer.phone ? customer.phone : 'Unkown',
+                        order: customer.order,
+                        total_spend: customer.total_spend
                     })
                 }
             })

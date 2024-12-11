@@ -23,6 +23,10 @@
                     <PieChartOutlined/>
                     <span>Review</span>
                 </MenuItem>
+                <MenuItem key="Intergration">
+                    <PieChartOutlined/>
+                    <span>Intergration</span>
+                </MenuItem>
             </Menu>
         </LayoutSider>
         <Layout>
@@ -39,6 +43,7 @@
                     <Product v-if="menu[0] == 'Product'"/>
                     <Order v-if="menu[0] == 'Order'"/>
                     <Review v-if="menu[0] == 'Review'"/>
+                    <Intergration v-if="menu[0] == 'Intergration'"> </Intergration>
                 </div>
             </LayoutContent>
             <LayoutFooter style="text-align: center">
@@ -73,10 +78,11 @@ import Order from "/views/OrderManagement/Order.vue"
 import Journey from "/views/Journey/Jouney.vue"
 import Product from "/views/Product/Product.vue"
 import Review from "/views/ReviewManagement/Review.vue"
+import Intergration from "/views/Intergration/Intergration.vue"
 
 export default {
     components: {
-        CustomerAction, Customer, Order, Journey, Review,Product,
+        CustomerAction, Customer, Order, Journey, Review,Product,Intergration,
         Menu, MenuItem, Layout, LayoutSider, LayoutHeader, LayoutContent, LayoutFooter, Breadcrumb, BreadcrumbItem,
         PieChartOutlined,
         DesktopOutlined,

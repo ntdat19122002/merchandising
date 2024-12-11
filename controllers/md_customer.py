@@ -14,9 +14,15 @@ class MerchandisingCustomer(http.Controller):
         customers = request.env["md.customer"].sudo().search([('store', '=', store.id)])
         customer_data = []
         for customer in customers:
+            journeys = request.env['md.journey'].sudo().search([('customer', '=', customer.id)])
+            total_spend = 0
+            for journey in journeys:
+                total_spend += journey.order.total_price
             customer_data.append({
                 'email': customer.email,
                 'phone': customer.phone,
+                'order': len(journeys),
+                'total_spend': total_spend
             })
         return json.dumps({
             'customer_data':customer_data

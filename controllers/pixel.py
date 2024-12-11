@@ -30,11 +30,31 @@ class Pixel(http.Controller):
             customer = request.env['md.customer'].sudo().create({
                 'store': store.id,
                 'shopify_customer_id': kw['client_id'],
+                'email': kw.get('email'),
+                'phone': kw.get('phone')
+            })
+        else:
+            customer.write({
+                'email': kw.get('email'),
+                'phone': kw.get('phone')
             })
         request.env['md.event'].sudo().create({
             'customer': customer.id,
             'event': kw['event'],
         })
+        order = request.env['md.shopify.order'].sudo().create({
+            'total_price': kw['event_data[totalPrice]'],
+        })
+        journey = request.env['md.journey'].sudo().create({
+            'store': store.id,
+            'order': order.id,
+            'customer': customer.id,
+        })
+        events_of_journey = request.env['md.event'].sudo().search([('customer','=',customer.id)])
+        for event in events_of_journey:
+            event.write({
+                'journey': journey.id,
+            })
         return {}
 
     @http.route('/pixel/events/checkout_started', methods=['GET'], auth='public')

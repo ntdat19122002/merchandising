@@ -7,3 +7,4 @@ class MerchandisingReview(models.Model):
     event = fields.Char()
     context = fields.Char()
     data = fields.Text()
+    journey = fields.Many2one('md.journey')

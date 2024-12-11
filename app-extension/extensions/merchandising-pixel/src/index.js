@@ -208,6 +208,9 @@ function analytics_checkout_completed(analytics) {
                 store_url: event.context.document.location.host,
                 client_id: event.clientId,
                 event: event.name,
+                event_data: payload.event_data,
+                email: event.data.checkout.email,
+                phone: event.data.checkout.phone,
             }
         })
     });

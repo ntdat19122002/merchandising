@@ -6,4 +6,5 @@ class MerchandisingReview(models.Model):
 
     store = fields.Many2one('md.shopify.store')
     shopify_id = fields.Char(string='Shopify ID')
-    type = fields.Char(string='Type')
+    journey = fields.Many2one('md.journey')
+    total_price = fields.Float(string='Total Price')

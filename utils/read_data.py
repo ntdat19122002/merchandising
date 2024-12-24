@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
+import os
 
-file_path = r'data\ecommerce-data'
+file_path = os.path.join(os.getcwd(),r'data/ecommerce-data')
 users = pd.read_csv(file_path+'/users.csv')
 ratings = pd.read_csv(file_path+'/ratings.csv')
 products = pd.read_csv(file_path+'/products.csv')

@@ -7,18 +7,22 @@
                     <PieChartOutlined/>
                     <span>Customer</span>
                 </MenuItem>
-                <MenuItem key="Journey">
-                    <FileOutlined/>
-                    <span>Journey</span>
-                </MenuItem>
+<!--                <MenuItem key="Journey">-->
+<!--                    <FileOutlined/>-->
+<!--                    <span>Journey</span>-->
+<!--                </MenuItem>-->
                 <MenuItem key="Product">
                     <PieChartOutlined/>
                     <span>Product</span>
                 </MenuItem>
-                <MenuItem key="Order">
+                <MenuItem key="Banner">
                     <PieChartOutlined/>
-                    <span>Order</span>
+                    <span>Banner</span>
                 </MenuItem>
+<!--                <MenuItem key="Order">-->
+<!--                    <PieChartOutlined/>-->
+<!--                    <span>Order</span>-->
+<!--                </MenuItem>-->
                 <MenuItem key="Review">
                     <PieChartOutlined/>
                     <span>Review</span>
@@ -41,6 +45,7 @@
                     <Customer v-if='menu[0] == "Customer"'/>
                     <Journey v-if="menu[0] == 'Journey'"/>
                     <Product v-if="menu[0] == 'Product'"/>
+                    <Banner v-if="menu[0] == 'Banner'"/>
                     <Order v-if="menu[0] == 'Order'"/>
                     <Review v-if="menu[0] == 'Review'"/>
                     <Intergration v-if="menu[0] == 'Intergration'"> </Intergration>
@@ -79,9 +84,11 @@ import Journey from "/views/Journey/Jouney.vue"
 import Product from "/views/Product/Product.vue"
 import Review from "/views/ReviewManagement/Review.vue"
 import Intergration from "/views/Intergration/Intergration.vue"
+import Banner from "./views/Banner/Banner.vue";
 
 export default {
     components: {
+        Banner,
         CustomerAction, Customer, Order, Journey, Review,Product,Intergration,
         Menu, MenuItem, Layout, LayoutSider, LayoutHeader, LayoutContent, LayoutFooter, Breadcrumb, BreadcrumbItem,
         PieChartOutlined,

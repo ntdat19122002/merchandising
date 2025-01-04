@@ -2,7 +2,9 @@ import pandas as pd
 import numpy as np
 import os
 
-file_path = os.path.join(os.getcwd(),r'data/ecommerce-data')
+link = r'../customaddons/merchandising/utils/data/ecommerce-data'
+# link = r'data/ecommerce-data'
+file_path = os.path.join(os.getcwd(),link)
 users = pd.read_csv(file_path+'/users.csv')
 ratings = pd.read_csv(file_path+'/ratings.csv')
 products = pd.read_csv(file_path+'/products.csv')

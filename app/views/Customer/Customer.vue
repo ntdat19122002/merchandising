@@ -35,6 +35,11 @@ export default {
                     key: 'phone',
                 },
                 {
+                    title: 'IP',
+                    dataIndex: 'ip',
+                    key: 'ip',
+                },
+                {
                     title: 'Order',
                     dataIndex: 'order',
                     key: 'order',

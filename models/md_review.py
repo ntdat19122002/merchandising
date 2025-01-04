@@ -1,4 +1,5 @@
-from odoo import models,fields
+from odoo import models, fields, api
+
 
 class MerchandisingReview(models.Model):
     _name = 'md.review'
@@ -7,3 +8,4 @@ class MerchandisingReview(models.Model):
     product = fields.Many2one('md.shopify.product')
     rating = fields.Integer()
     description = fields.Text()
+    customer = fields.Many2one('md.customer')

@@ -31,12 +31,18 @@ class Pixel(http.Controller):
                 'store': store.id,
                 'shopify_customer_id': kw['client_id'],
                 'email': kw.get('email'),
-                'phone': kw.get('phone')
+                'phone': kw.get('phone'),
+                'ip': request.httprequest.remote_addr,
+                'first_name': kw.get('first_name'),
+                'last_name': kw.get('last_name'),
             })
         else:
             customer.write({
                 'email': kw.get('email'),
-                'phone': kw.get('phone')
+                'phone': kw.get('phone'),
+                'ip': request.httprequest.remote_addr,
+                'first_name': kw.get('first_name'),
+                'last_name': kw.get('last_name'),
             })
         request.env['md.event'].sudo().create({
             'customer': customer.id,

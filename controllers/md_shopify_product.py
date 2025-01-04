@@ -19,16 +19,22 @@ class MerchandisingProduct(http.Controller):
                 product_find_by_shopify_id = request.env["md.shopify.product"].sudo().create({
                     'shopify_id':product.id,
                     'title': product.title,
-                    'store':store.id
+                    'store':store.id,
+                    'image_url': product.image.src if product.image else None,
+                    'url':f'https://{store.primary_domain}/products/${product.handle}'
                 })
             else:
                 product_find_by_shopify_id.write({
                     'title': product.title,
+                    'image_url': product.image.src if product.image else None,
+                    'url':f'https://{store.primary_domain}/products/{product.handle}'
                 })
             product_data.append({
                 'id': product_find_by_shopify_id.id,
                 'shopify_id': product_find_by_shopify_id.shopify_id,
                 'title': product_find_by_shopify_id.title,
+                'image_url': product_find_by_shopify_id.image_url,
+                'url': product_find_by_shopify_id.url
             })
         return json.dumps({
             'product_data': product_data

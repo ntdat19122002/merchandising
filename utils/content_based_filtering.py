@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.linear_model import Ridge
 from sklearn import linear_model
 from sklearn.feature_extraction.text import TfidfTransformer
-from read_data import n_users, rate_train, rate_test, rates, items, n_items
+from .read_data import n_users, rate_train, rate_test, rates, items, n_items
 
 X0 = items.values
 X_train_counts = X0[:, 2:]
@@ -93,4 +93,5 @@ def test():
     rcm_movie = items[items['product_id'].isin(rcm_list)]['product_name']
     print(rcm_movie)
     
-test()         
+content_based = Contentbased(rates, X_train_counts, n_users, n_items)
+content_based.fit()

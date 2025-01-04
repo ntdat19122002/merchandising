@@ -1,0 +1,21 @@
+<div id="merchandising-banner-app"></div>
+
+<script>
+  let script = document.createElement('script')
+  script.type = 'text/javascript'
+  script.id = 'merchandising-banner-script'
+  script.src = 'https://odoo.website/merchandising/static/js/appBanner.js?v=20241129_1'
+  document.head.appendChild(script)
+</script>
+
+{% schema %}
+{
+  "name": "Banner",
+  "target": "section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "product", "autofill": true },
+    { "type": "color", "id": "colour", "label": "Star Colour", "default": "#ff0000" }
+  ]
+}
+{% endschema %}
+

@@ -26,7 +26,6 @@ module.exports = (env) => {
                     use: [
                         'vue-style-loader',
                         'css-loader',
-
                     ]
                 },
                 {

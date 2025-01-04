@@ -21,6 +21,9 @@ class MerchandisingCustomer(http.Controller):
             customer_data.append({
                 'email': customer.email,
                 'phone': customer.phone,
+                'ip_address': customer.ip_address,
+                'first_name': customer.first_name,
+                'last_name': customer.last_name,
                 'order': len(journeys),
                 'total_spend': total_spend
             })

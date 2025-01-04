@@ -1,6 +1,8 @@
 import {register} from "@shopify/web-pixels-extension";
 import axios from "axios";
 
+console.log('pixel 3/1 is active')
+
 register(({analytics, browser, init, settings}) => {
     analytics_page_viewed(analytics)
     analytics_product_viewed(analytics)
